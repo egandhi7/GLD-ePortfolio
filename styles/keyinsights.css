@@ -40,18 +40,30 @@ main {
 }
 
 .navbar .nav-container a {
+  position: relative;
   text-decoration: none;
   color: #0e2431;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
-  transition: 0.1s ease;
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
+  transition: 0.3s ease;
 }
 
-.navbar .nav-container a:hover{
-    font-weight: 600;
+.navbar .nav-container a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #0e2431;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-container a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .nav-container {
@@ -109,8 +121,7 @@ main {
 
 .navbar .menu-items {
   padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  background-color: rgba(211, 211, 211, 0.947);
+  background: #f5f5f5f4;
   height: 100vh;
   width: 100%;
   transform: translate(-150%);
@@ -124,6 +135,8 @@ main {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
@@ -147,8 +160,7 @@ main {
 }
 
 .navbar .menu-items .tab.active {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  font-weight:bold;
 }
 
 /*fade in page*/
@@ -177,10 +189,12 @@ main {
 
 .main-content {
     display: flex;
-    margin-top: 150px;
+    flex-wrap: wrap;
+    margin-top: 120px;
     justify-content: center;
     align-items: center;
     gap: 75px;
+    padding: 20px;
 }
 
 .square {

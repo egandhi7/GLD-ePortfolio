@@ -7,20 +7,22 @@
 
 body {
   font-family: sans-serif;
-  background: #f1f1f1;
+  background: hsla(300, 9%, 60%, 0.2);
 }
 
-main {
+.main-content {
   padding-top: 62px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .navbar {
-  position: fixed; /* Make navbar float */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999; /* High z-index to stay on top */
-  background-color: white; /* Prevent transparency if needed */
+  z-index: 999; 
+  background-color: white; 
   box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
@@ -40,6 +42,7 @@ main {
 }
 
 .navbar .nav-container a {
+  position: relative;
   text-decoration: none;
   color: #0e2431;
   font-weight: 500;
@@ -48,8 +51,21 @@ main {
   transition: 0.3s ease;
 }
 
-.navbar .nav-container a:hover{
-    font-weight: bolder;
+.navbar .nav-container a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #0e2431;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-container a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .nav-container {
@@ -107,8 +123,7 @@ main {
 
 .navbar .menu-items {
   padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  background-color: rgba(211, 211, 211, 0.947);
+  background: #f5f5f5f4;
   height: 100vh;
   width: 100%;
   transform: translate(-150%);
@@ -122,6 +137,8 @@ main {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
@@ -156,4 +173,85 @@ main {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/*key insight 2 styles*/
+.main-content h1 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 5px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+}
+
+.section-one, .section-two {
+  margin-top: 50px;
+}
+
+.section-two {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.087);
+  padding: 15px;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+.section-one p, .section-two p{
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.section-two h2 {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.section-two h3 {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.section-two img {
+  max-width: 400px;
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;   
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+
+.image-container img {
+  width: 400px;
+  height: auto;
+  object-fit: cover; 
+}
+
+.iframe {
+  display: flex;
+  justify-content: center;
+}
+
+.bold {
+  color: rgb(75, 65, 75)
+}
+
+@media (max-width: 900px) {
+  .image-container {
+    max-width: 300px;
+  }
 }
