@@ -7,7 +7,36 @@
 
 body {
   font-family: sans-serif;
-  background: #f1f1f1;
+  background: none;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-repeat: repeat;
+  overflow: visible;
+}
+
+.bg-pic {
+  width: 100%;
+  height: 150rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+  backdrop-filter: blue(40px);
+}
+
+@media (max-width: 860px) {
+  .bg-pic {
+    height: 180rem;
+  }
 }
 
 main {
@@ -161,4 +190,51 @@ main {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.main-content {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.main-content p {
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 15px;
+  padding: 10px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 700;
+  color: #0889a3; 
+}
+
+.title {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  color: #246a82; 
+}
+
+.main-content h2 {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #135f78;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
