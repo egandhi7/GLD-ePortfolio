@@ -7,7 +7,36 @@
 
 body {
   font-family: sans-serif;
-  background: #f1f1f1;
+  background: none;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-repeat: repeat;
+  overflow: visible;
+}
+
+.bg-pic {
+  width: 100%;
+  height: 150rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+  backdrop-filter: blue(40px);
+}
+
+@media (max-width: 860px) {
+  .bg-pic {
+    height: 180rem;
+  }
 }
 
 main {
@@ -176,6 +205,12 @@ main {
   padding: 10px 20px;
   max-width: 800px;
   margin: 0 auto;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 700;
+  color: #0889a3; 
 }
 
 .title {
