@@ -245,6 +245,7 @@ main {
     }
     h2 {
       position:relative;
+      margin-top: 45px;
       bottom: 40px;
       font-family: sans-serif;
       text-transform: uppercase;
@@ -256,7 +257,6 @@ main {
       bottom: 20px;
       font-family: inherit;
       letter-spacing: 1.5px;
-      text-transform: lowercase;
       margin: .5rem 0;
       color: #678492;
     }
@@ -265,7 +265,6 @@ main {
       bottom: 20px;
       font-family: inherit;
       letter-spacing: 1.5px;
-      text-transform: lowercase;
       margin: .5rem 0;
       color: #455964;
     }
@@ -281,10 +280,10 @@ main {
       position:relative;
       bottom: 0px;
       font-family: inherit;
-      letter-spacing: 1.5px;
-      text-transform: lowercase;
       margin: .5rem 0;
       color: #264a5e;
+      font-size: 15px;
+      line-height: 20px;
     }
     .tokenInfo{
       /* display: flex; */
@@ -338,10 +337,9 @@ main {
   display: flex;
   align-items: center;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: -.3rem;
   font-family: sans-serif;
-  text-transform: lowercase;
   letter-spacing: 2px;
   font-size: 10px;
   color: #678492;
